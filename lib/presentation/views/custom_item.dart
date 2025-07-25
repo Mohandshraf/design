@@ -5,45 +5,70 @@ class CustomItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 60, right: 60),
-      child: Container(
-        width: 300,
-        height: 220,
-        margin: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: Colors.blueAccent,
-          borderRadius: BorderRadius.circular(15),
-        ),
+    return Container(
+      width: 320,
+      height: 190,
+      margin: const EdgeInsets.all(4), // قللت المسافة بين العناصر في الشبكة
+      decoration: BoxDecoration(
+        color: Colors.blueAccent,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(13),
-              child: IntrinsicWidth(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(18),
-                  ),
-                  padding: const EdgeInsets.all(6),
-
-                  child: Text(
-                    'Dynamic width text',
-                    style: TextStyle(color: Colors.white, fontSize: 10),
-                  ),
+            // الشارة السوداء الصغيرة
+            IntrinsicWidth(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(18),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                child: Text(
+                  'Dynamic width text',
+                  style: TextStyle(color: Colors.white, fontSize: 10),
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Text(
-                "Mohand Ashraf Yehia",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 20,
-                ),
+            const SizedBox(height: 8),
+
+            // العنوان
+            Text(
+              "Mohand Ashraf Yehia",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w700,
+                fontSize: 20,
+              ),
+            ),
+            const SizedBox(height: 6),
+
+            // النص الكبير
+            Text(
+              "This is a custom item widget that can be reused in different parts of the app. It has a dynamic width text and a title.",
+              style: TextStyle(color: Colors.black, fontSize: 14.5),
+              
+              
+            ),
+
+            const Spacer(),
+
+            Divider(
+              color: Colors.black,
+              thickness: 0.5,
+            ),
+
+            const SizedBox(height: 6),
+
+            // التاريخ
+            Text(
+              "oct 2023-10-01",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ],
